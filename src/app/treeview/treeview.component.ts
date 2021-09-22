@@ -29,8 +29,9 @@ export class TreeviewComponent implements OnInit {
   }
 
   onKeypressEvent(e: any) {
-    const data = e.target.value;
-    console.log('dataa', data);
+    const data = e.target.value.toLowerCase();
+    console.log("input data", data)
+  
     if (!data.length) {
       this.nodeservice.getFilesystem().then((files) => {
         this.files1 = files;
@@ -38,7 +39,7 @@ export class TreeviewComponent implements OnInit {
       return this.files1;
     } else {
       return (this.files1 = this.files1.filter((dataObject: any) =>
-        dataObject.data.name.includes(data)
+       dataObject.data.name.toLowerCase().includes(data),
       ));
     }
   }
