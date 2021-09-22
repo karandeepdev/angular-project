@@ -1,0 +1,13 @@
+.edit{
+    border: none;
+    outline: none;
+}
+ tr > td:nth-child(1) {
+    text-align: left;
+    border: 1px solid #e9ecef;
+    border-width: 0 0 1px 0;
+    padding: 1rem 1rem;
+    position: sticky;
+    left: 0;
+    background-color: white;
+}

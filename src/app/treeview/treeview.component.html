@@ -1,0 +1,51 @@
+<div class="container" style="text-align: right">        
+    <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+    <input type="text" (keyup)="onKeypressEvent($event)" />
+</div>
+
+<div class="container" style="margin-top: 10px;">
+    <p-treeTable [value]="files1"  style="width: 150% !important">
+  <ng-template pTemplate="header" style="width: 150%">
+    <tr>
+      <th style="width: 22rem !important" *ngFor="let col of cols" [ttSortableColumn]="col.field" >
+        {{col.header}} <p-treeTableSortIcon [field]="col.field"></p-treeTableSortIcon>
+      </th>
+      <th style="width: 22rem !important">
+        Size <i class="pi pi-arrow-up"></i>
+      </th>
+      <th style="width: 22rem !important">
+        Type <i class="pi pi-arrow-up"></i>
+      </th>
+      <th style="width: 22rem !important">
+        Size <i class="pi pi-arrow-up"></i>
+      </th>
+      <th style="width: 22rem !important">
+        Type <i class="pi pi-arrow-up"></i>
+      </th>
+     
+     
+      
+    </tr>
+  </ng-template>
+  <ng-template
+    pTemplate="body"
+    let-rowNode
+    let-rowData="rowData"
+    let-index="rowIndex"
+  >
+    <tr [ttRow]="rowNode" style="width: 150%" >
+      <td>
+        <p-treeTableToggler [rowNode]="rowNode" ></p-treeTableToggler>
+        <input type="text" value="{{ rowData.name }}" class="edit" />
+      </td>
+      <td><input type="text" value="{{ rowData.size }}" class="edit" /></td>
+      <td><input type="text" value="{{ rowData.type }}" class="edit" /></td>
+      <td><input type="text" value="{{ rowData.size }}" class="edit" /></td>
+      <td><input type="text" value="{{ rowData.type }}" class="edit" /></td>
+      <td><input type="text" value="{{ rowData.size }}" class="edit" /></td>
+      <td><input type="text" value="{{ rowData.type }}" class="edit" /></td>
+    
+    </tr>
+  </ng-template>
+</p-treeTable>
+</div>
